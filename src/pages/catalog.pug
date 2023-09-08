@@ -1,0 +1,36 @@
+extends ../pug/layout-catalog.pug
+
+block meta
+  title Каталог проектов
+  meta(name='description', content='')
+
+block breadcrumbs
+  +breadcrumbs(["Главная", "Каталог проектов"])
+block title
+  h1 Каталог проектов    
+block filter
+  +select("Наименование курирующей фабрики процессов", ["2023", "2022", "2021"], name="title")
+  +select("Год реализации", ["2023", "2022", "2021"], name="year")
+  +select("Направление или область проекта", ["2023", "2022", "2021"], name="direction")
+  +select("Разработчик ОМСУ", ["2023", "2022", "2021"], name="developer")
+  +select("Курирующая фабрика процессов", ["2023", "2022", "2021"], name="factory")
+  +select("Статус", ["2023", "2022", "2021"], name="year")
+  .filter__title Эффект
+  +range("экономический эффект")
+  +range("высвобожденное время процесса")
+  .filter__title Расходы
+  +range("")
+            
+block content
+  .project__item
+    .project__item-img
+      img(src="img/project-img.png", alt="")
+    .project__item-content
+      .project__item-tag Лучшая практика
+      .project__item-title Выкса_Эффективное пассажирское
+      .project__item-desc Введение визуальной навигации в здании МБОУ, с целью сокращения времени пользователей
+      ul.project__item-params
+        li
+          span год реализации
+          span 2023
+      +link("Подробнее", "", "btn", false)(class="project__item-link")
